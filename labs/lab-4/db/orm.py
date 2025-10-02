@@ -25,8 +25,14 @@ def insert_professors():
     try:
         # TODO: create three professor objects
         # TODO: use the sqlalchemy orm to insert the new records as a list of professor objects
+        prof1 = Professor(name="Dr. Callista", department="Computer Science")
+        prof2 = Professor(name="Dr. Frank", department="Mathematics")
+        prof3 = Professor(name="Dr. Fred", department="English")
+        
+        session.add_all([prof1, prof2, prof3])
         # "save" the changes
         session.commit()
+        print("Successfully inserted 3 professors")
 
     except Exception as e:
         session.rollback()
@@ -41,8 +47,14 @@ def update_professor():
     try:
         # TODO: get professor to be updated (would ideally be a parameter)
         # TODO: use the sqlalchemy orm to update 1 record
-        # "save" the changes
-        session.commit()
+        prof = session.query(Professor).filter_by(name="Dr. Callista").first()
+        if prof:
+            prof.department = "Computer Engineering"
+            # "save" the changes
+            session.commit()
+            print("Successfully updated professor")
+        else:
+            print("Professor 'Dr. Callista' not found for update")
     
     except Exception as e:
         session.rollback()
@@ -57,8 +69,14 @@ def delete_professor():
     try:
         # TODO: get professor to be deleted (would ideally be a parameter)
         # TODO: use the sqlalchemy orm to delete 1 record
-        # "save" the changes
-        session.commit()
+        prof = session.query(Professor).filter_by(name="Dr. Fred").first()
+        if prof:
+            session.delete(prof)
+            # "save" the changes
+            session.commit()
+            print("Successfully deleted professor")
+        else:
+            print("Professor 'Dr. Fred' not found for deletion")
 
     except Exception as e:
         session.rollback()
@@ -66,4 +84,3 @@ def delete_professor():
 
     finally:
         session.close()
-
