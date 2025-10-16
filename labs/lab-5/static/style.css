@@ -1,0 +1,118 @@
+body {
+    background-color: #ff00ff;
+    font-family: "Wingdings", "Webdings", sans-serif;
+    cursor: crosshair;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: yellow;
+    text-align: right;
+    font-size: 48px;
+    transform: rotate(-5deg);
+    text-shadow: 10px 10px 5px black;
+    margin: 10px;
+    padding: 15px;
+    background-color: blue;
+}
+
+h2 {
+    color: lime;
+    text-align: left;
+    font-size: 36px;
+    transform: rotate(3deg);
+    background-color: purple;
+    padding: 10px;
+    margin: 20px 5px;
+}
+
+p {
+    font-family: "Wingdings", "Webdings", sans-serif;
+    font-size: 24px;
+    text-align: justify;
+    color: cyan;
+    background-color: black;
+    padding: 20px;
+    margin: 10px;
+    border: 5px dotted red;
+    line-height: 2;
+}
+
+.nav {
+    background-color: #00ffff;
+    padding: 15px;
+    margin: 10px;
+    border: 3px dashed yellow;
+    text-align: center;
+    transform: skewX(-10deg);
+}
+
+.nav a {
+    font-family: "Wingdings", "Webdings", sans-serif;
+    font-size: 28px;
+    color: red;
+    text-decoration: overline;
+    margin: 0 15px;
+    padding: 5px 10px;
+    background-color: black;
+    display: inline-block;
+    transform: skewX(10deg);
+}
+
+.nav a:hover {
+    color: white;
+    background-color: red;
+    transform: scale(1.5) rotate(10deg);
+    text-decoration: line-through;
+}
+
+.content {
+    background-image: linear-gradient(45deg, purple, orange);
+    padding: 25px;
+    margin: 15px;
+    border: 8px double green;
+    transform: rotate(1deg);
+}
+
+.image-container {
+    float: right;
+    margin: 20px;
+    padding: 10px;
+    background-color: pink;
+    border: 5px solid blue;
+    transform: rotate(10deg);
+}
+
+.blinking {
+    animation: blink 0.3s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.moving {
+    animation: move 2s infinite alternate;
+}
+
+@keyframes move {
+    0% { transform: translateX(0) rotate(0deg); }
+    100% { transform: translateX(50px) rotate(10deg); }
+}
+
+.rotating {
+    animation: rotate 5s infinite linear;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+img {
+    filter: hue-rotate(90deg) contrast(200%);
+    border: 3px solid #00ff00 !important;
+}
