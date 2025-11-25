@@ -28,10 +28,18 @@ def insert_courses():
     session = get_session()
     try:
         # TODO: write a SQL query to insert 3 records 
-        query = """
-        """
-        session.execute(text(query))
+        insert_queries = [
+    'INSERT INTO "Courses" (course_id, course_name, credits) VALUES (\'CMPT101\', \'Introduction to Programming\', 3);',
+    'INSERT INTO "Courses" (course_id, course_name, credits) VALUES (\'MATH101\', \'Calculus I\', 4);',
+    'INSERT INTO "Courses" (course_id, course_name, credits) VALUES (\'ENG101\', \'English Composition\', 3);'
+]
+
+        
+        # Execute each insert query
+        for query in insert_queries:
+            session.execute(text(query))
         session.commit()
+        print("Successfully inserted 3 courses")
 
     except Exception as e:
         session.rollback()
@@ -45,11 +53,13 @@ def update_course():
     session = get_session()
     try:
         # TODO: write a SQL query to update 1 record
-        query = """
-        """
+        query = 'UPDATE "Courses" SET credits = 4 WHERE course_id = \'CMPT101\';'
+
+        
         result = session.execute(text(query))
         # "save" the changes
         session.commit()
+        print("Successfully updated course")
         return result
     
     except Exception as e:
@@ -64,11 +74,12 @@ def delete_course():
     session = get_session()
     try:
         # TODO: write a SQL query to delete 1 record
-        query = """
-        """
+        query = 'DELETE FROM "Courses" WHERE course_id = \'ENG101\';'
+        
         result = session.execute(text(query))
         # "save" the changes
         session.commit()
+        print("Successfully deleted course")
         return result
     
     except Exception as e:
