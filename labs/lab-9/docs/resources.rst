@@ -2,40 +2,40 @@
 
 Resources
 =========
-This section describes classes and functions private to <application-name>. It is intended to document how the application works
+This section describes the lab assignments in the CMPT221 repository.
 
 labs.lab-1
 ----------
-<Short description of Lab 1>
+Crating a pull request .
 
 labs.lab-2
 ----------
-<Short description of Lab 2>
+Creating a virtual environment .
 
 labs.lab-3
 ----------
-<Short description of Lab 3>
+Creating and connecting to a postgres db.
 
 labs.lab-4
 ----------
-<Short description of Lab 4>
+SQL vs ORM.
 
 labs.lab-5
 ----------
-<Short description of Lab 5>
+Creating a bad GUI.
 
 labs.lab-6
 ----------
-<Short description of Lab 6>
+Login.
 
 labs.lab-7
 ----------
-<Short description of Lab 7>
+Defensive Programming.
 
 labs.lab-8
 ----------
-<Short description of Lab 8>
+Unit Test.
 
 labs.lab-9
 ----------
-<Short description of Lab 9>
+Documentation.
