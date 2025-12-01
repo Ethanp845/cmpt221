@@ -2,8 +2,8 @@
 
 import os
 from dotenv import load_dotenv
-from flask import Flask, render_template
-from db.query import get_all
+from flask import Flask, render_template, request, redirect, url_for
+from db.query import get_all, get_user_by_email
 from db.server import init_database
 from db.schema import Users
 
@@ -49,11 +49,39 @@ def create_app():
 
         return render_template('signup.html')
     
-    @app.route('/login')
+    @app.route('/login', methods=['GET', 'POST'])
     def login():
         """Log in page: enables users to log in"""
-        # TODO: implement login logic here
-
+        
+        if request.method == 'POST':
+            # get the form data
+            email = request.form['email']
+            password = request.form['password']
+            
+            # try to find user in database
+            try:
+                # get all users and find matching email
+                all_users = get_all(Users)
+                user_found = None
+                
+                for user in all_users:
+                    if user.Email == email:
+                        user_found = user
+                        break
+                
+                # check if user exists and password matches
+                if user_found and user_found.Password == password:
+                    # login successful - go to success page
+                    return redirect(url_for('success'))
+                else:
+                    # login failed - show error
+                    return render_template('login.html', error="Invalid email or password")
+                    
+            except Exception as e:
+                print(f"Error during login: {e}")
+                return render_template('login.html', error="Login failed, please try again")
+        
+        # if GET request, just show the login form
         return render_template('login.html')
 
     @app.route('/users')
@@ -66,7 +94,6 @@ def create_app():
     @app.route('/success')
     def success():
         """Success page: displayed upon successful login"""
-
         return render_template('success.html')
 
     return app
