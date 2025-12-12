@@ -1,0 +1,23 @@
+2025-12-12 01:08:51,528 [INFO] Database initialized successfully
+2025-12-12 01:08:51,659 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2025-12-12 01:08:51,660 [INFO] [33mPress CTRL+C to quit[0m
+2025-12-12 01:08:51,662 [INFO]  * Restarting with stat
+2025-12-12 01:08:52,646 [INFO] Database initialized successfully
+2025-12-12 01:08:52,678 [WARNING]  * Debugger is active!
+2025-12-12 01:08:52,679 [INFO]  * Debugger PIN: 354-146-453
+2025-12-12 01:08:54,665 [INFO] User accessed home page
+2025-12-12 01:08:55,133 [INFO] 172.18.0.1 - - [12/Dec/2025 01:08:55] "GET / HTTP/1.1" 200 -
+2025-12-12 01:08:55,193 [INFO] 172.18.0.1 - - [12/Dec/2025 01:08:55] "GET /static/style.css HTTP/1.1" 200 -
+2025-12-12 01:08:55,250 [INFO] 172.18.0.1 - - [12/Dec/2025 01:08:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-12 01:09:25,780 [INFO] 172.18.0.1 - - [12/Dec/2025 01:09:25] "GET /signup HTTP/1.1" 200 -
+2025-12-12 01:09:25,807 [INFO] 172.18.0.1 - - [12/Dec/2025 01:09:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-12-12 01:11:29,583 [INFO] 172.18.0.1 - - [12/Dec/2025 01:11:29] "GET /signup HTTP/1.1" 200 -
+2025-12-12 01:11:29,704 [INFO] 172.18.0.1 - - [12/Dec/2025 01:11:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-12-12 01:12:13,716 [INFO] New user registered: henryhotline@test.com
+2025-12-12 01:12:13,717 [INFO] 172.18.0.1 - - [12/Dec/2025 01:12:13] "[32mPOST /signup HTTP/1.1[0m" 302 -
+2025-12-12 01:12:13,725 [INFO] User accessed home page
+2025-12-12 01:12:13,730 [INFO] 172.18.0.1 - - [12/Dec/2025 01:12:13] "GET / HTTP/1.1" 200 -
+2025-12-12 01:12:13,767 [INFO] 172.18.0.1 - - [12/Dec/2025 01:12:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 6 Sign Up</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <h1>Sign Up</h1>
+        <div>
+            <form method="POST" action="/signup" onsubmit="return validateForm()">
+                <label for="FirstName">First Name:</label>
+                <input type="text" id="FirstName" name="FirstName" required>
+                
+                <label for="LastName">Last Name:</label>
+                <input type="text" id="LastName" name="LastName" required>
+                
+                <label for="Email">Email:</label>
+                <input type="email" id="Email" name="Email" required>
+                
+                <label for="PhoneNumber">Phone Number:</label>
+                <input type="tel" id="PhoneNumber" name="PhoneNumber" pattern="[0-9]{10}" required>
+                
+                <label for="Password">Password:</label>
+                <input type="password" id="Password" name="Password" required>
+                
+                <input type="submit" value="Sign Up">
+            </form>
+            
+            {% if error %}
+            <p style="color: red;">{{ error }}</p>
+            {% endif %}
+        </div>
+
+        <br>
+        <a href="/">
+            <button type="button" id="home">Home</button>
+        </a>
+
+        <script>
+        function validateForm() {
+            // Client-side validation
+            var firstName = document.getElementById('FirstName').value;
+            var lastName = document.getElementById('LastName').value;
+            var phone = document.getElementById('PhoneNumber').value;
+            
+            // Check for letters only in names
+            var nameRegex = /^[A-Za-z]+$/;
+            if (!nameRegex.test(firstName)) {
+                alert("First name can only contain letters");
+                return false;
+            }
+            
+            if (!nameRegex.test(lastName)) {
+                alert("Last name can only contain letters");
+                return false;
+            }
+            
+            // Check phone is 10 digits
+            var phoneRegex = /^[0-9]{10}$/;
+            if (!phoneRegex.test(phone)) {
+                alert("Phone number must be exactly 10 digits");
+                return false;
+            }
+            
+            return true;
+        }
+        </script>
+    </body>
+</html>
